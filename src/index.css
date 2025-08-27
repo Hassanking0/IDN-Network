@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;              /* width of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #111;        /* scrollbar background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;        /* scrollbar thumb (draggable part) */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;        /* hover effect */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: #333 #111;     /* thumb color | track color */
+}
+
