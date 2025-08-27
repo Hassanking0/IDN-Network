@@ -1,4 +1,3 @@
-
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -17,7 +16,7 @@ interface ActiveBookingsListProps {
 }
 
 export function ActiveBookingsList({ 
-  bookings = [], 
+  bookings = [],
   onMenuClick 
 }: ActiveBookingsListProps) {
   return (

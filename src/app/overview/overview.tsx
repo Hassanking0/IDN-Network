@@ -3,7 +3,7 @@ import ProfileCompletionCard from "@/components/overviewheadercard";
 
 const overview = () => {
   return (
-    <div className="w-280 bg-zinc-950 text-white min-h-full px-2 pb-22">
+    <div className="w-280 bg-zinc-950 text-white min-h-full px-2 pb-22 select-none">
       <div className="header max-w-screen h-60 flex items-center justify-between px-2">
         <div className="title">
           <div className="subtitle text-sm">Monday, 25 Aug</div>

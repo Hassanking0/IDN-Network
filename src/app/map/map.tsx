@@ -3,7 +3,7 @@ import { MapView } from "@/components/map";
 
 const map = () => {
   return (
-    <div className="text-white w-280">
+    <div className="text-white w-280 select-none">
       <div className="title w-full h-20 flex items-center text-3xl px-2">
         <h1>Map View</h1>
       </div>

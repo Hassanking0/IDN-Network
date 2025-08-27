@@ -63,7 +63,7 @@ export function CreateDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-zinc-900 border-zinc-700 text-white">
+      <DialogContent className="select-none sm:max-w-md bg-zinc-900 border-zinc-700 text-white">
         <DialogHeader>
           <DialogTitle className="text-center text-lg font-medium text-zinc-300">
             What do you want to create?
@@ -94,7 +94,7 @@ export function CreateDialog({
   );
 }
 
-// Example usage component
+
 export function CreateButtonWithDialog() {
   const [dialogOpen, setDialogOpen] = React.useState(false);
 

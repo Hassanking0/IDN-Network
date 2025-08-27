@@ -18,6 +18,11 @@ import Discount from "./app/discount/discount";
 import Business_info from "./app/business_info/business_info";
 import Qr_code from "./app/Qr_code/Qr_code";
 import Distrubution_channels from "./app/distribution_channels/distribution_channels";
+import Services from "./app/services/services";
+import Preview from "./app/preview/preview";
+import Reviews from "./app/reviews/reviews";
+import IdnPro from "./app/idnPro/idnPro";
+import SurgePricing from "./app/surgePricing/surgePricing";
 
 
 const router = createBrowserRouter([
@@ -100,6 +105,26 @@ const router = createBrowserRouter([
       {
         path: 'distribution_channels',
         element: <Distrubution_channels/>
+      },
+      {
+        path: 'services',
+        element: <Services />
+      },
+      {
+        path: 'preview',
+        element: <Preview />
+      },
+      {
+        path: 'reviews',
+        element: <Reviews />
+      },
+      {
+        path: 'idnPro',
+        element: <IdnPro />
+      },
+      {
+        path : 'surgePricing',
+        element: <SurgePricing/>
       }
     ]
   },

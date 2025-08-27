@@ -11,7 +11,7 @@ useEffect(() => {
     // Simulate loading (e.g. auth check, API call, etc.)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // loader visible for 2s
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 

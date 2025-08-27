@@ -70,12 +70,12 @@ const data = {
         },
         {
           title: "IDN Pro",
-          url: "/idn-pro",
+          url: "/idnPro",
           icon: Flame
         },
         {
           title: "Surge Pricing",
-          url: "/surge-pricing",
+          url: "/surgePricing",
           icon: CircleDollarSign
         },
       ],
