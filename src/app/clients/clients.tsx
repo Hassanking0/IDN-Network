@@ -5,7 +5,7 @@ const clients = () => {
   let [text, setText] = useState("")
 
   return (
-    <div className="w-280 bg-black text-white min-h-full px-2 pb-22">
+    <div className="w-280 bg-black text-white min-h-full px-2 pb-22 select-none">
       <div className="header h-20 flex items-center px-2">
         <div className="title text-3xl">
           Clients
