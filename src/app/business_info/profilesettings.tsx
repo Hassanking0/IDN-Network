@@ -34,7 +34,7 @@ export default function ProfileSettings() {
 
         {/* ---- Profile Tab ---- */}
         <TabsContent value="profile" className="mt-6">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="text-blue-60 grid grid-cols-2 gap-6">
             {/* Row 1 */}
             <div className="flex items-center justify-between bg-neutral-900 px-4 py-3 rounded-xl">
               <Label htmlFor="private">Set profile as private?</Label>

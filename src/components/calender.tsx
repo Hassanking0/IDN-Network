@@ -62,7 +62,7 @@ const CalendarLine: React.FC = () => {
               })}
             </span>
           </div>
-          <div className="flex space-x-2 gap-6 justify-center">
+          <div className="flex gap-2 justify-center">
             {displayedDates.map((date, index) => {
               const isActive = index === selectedIndex;
               return (

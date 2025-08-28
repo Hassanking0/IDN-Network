@@ -4,6 +4,7 @@ import Sidebar from "../app-sidebar";
 import { Outlet } from "react-router-dom";
 import Navbar from "../navbar";
 import Loader from "@/components/loader";
+import BottomBar from "../bottomBar";
 
 const AppShell = () => {
 const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ useEffect(() => {
 
   return (
     <div className="bg-black w-screen h-screen">
-      <div className="header fixed top-0 left-0 w-full z-30">
+      <div className="header md:fixed top-0 left-0 w-107 md:w-full z-30">
         <Navbar />
       </div>
      <main className="z-20 relative">
@@ -29,14 +30,16 @@ useEffect(() => {
     <div className="flex">
       <Sidebar className="pt-18 bg-zinc-950 text-zinc-100"/>   {/* push below navbar */}
       <SidebarInset>
-        <div className="relative top-18 h-179 overflow-y-auto">
+        <div className="hidden md:block relative w-full mt-14 md:w-full h-182 overflow-y-auto">
           <Outlet />
         </div>
       </SidebarInset>
     </div>
   </SidebarProvider>
 </main>
-
+<div className="block md:hidden bottom-bar fixed bottom-0">
+<BottomBar />
+</div>
     </div>
   );
 };
