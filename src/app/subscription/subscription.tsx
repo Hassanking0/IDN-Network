@@ -1,6 +1,8 @@
 import Pricing from "@/components/pricingplan";
 import PricingYearly from "@/components/pricingplanYearly";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import PricingMobile from "@/components/pricingplanMobile";
+import PricingMobileYearly from "@/components/pricingplanMobileYearly";
 
 export const subscription = () => {
   return (
@@ -34,11 +36,17 @@ export const subscription = () => {
     </TabsTrigger>
   </TabsList>
 
-  <TabsContent value="monthly">
+  <TabsContent value="monthly" className="hidden md:block">
     <Pricing />
   </TabsContent>
-  <TabsContent value="yearly">
+    <TabsContent value="monthly" className="block md:hidden">
+    <PricingMobile />
+  </TabsContent>
+  <TabsContent value="yearly" className="hidden md:block">
     <PricingYearly />
+  </TabsContent>
+   <TabsContent value="yearly" className="block md:hidden">
+    <PricingMobileYearly />
   </TabsContent>
 </Tabs>
 

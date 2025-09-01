@@ -24,7 +24,7 @@ const AppShell = () => {
       <div className="header md:fixed top-0 left-0 w-107 md:w-full z-100">
         <Navbar />
       </div>
-      <main className="h-full w-full z-20 relative">
+      <main className="pt-18 h-full w-full z-20 relative">
         <SidebarProvider>
             <Sidebar className="pt-18 bg-zinc-950 text-zinc-100" />{" "}
             <SidebarInset>
