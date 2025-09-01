@@ -193,9 +193,9 @@ export function MapView({ className = "" }: MapViewProps) {
         </div>
       </div>
    {/* mobile view */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden mx-4 my-4 ">
         <div
-          className={`h-185 w-screen lg:w-180 rounded-2xl bg-zinc-900 text-white flex flex-col ${className}`}
+          className={`h-170 mb-10 min-w-80 lg:w-180 rounded-2xl bg-zinc-900 text-white flex flex-col ${className}`}
         >
           {/* Header Controls */}
           <div className="p-4 border-b border-zinc-700">

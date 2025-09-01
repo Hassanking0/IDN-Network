@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export const subscription = () => {
   return (
-    <div className="text-white w-285 select-none p-4">
+    <div className="text-white w-full select-none p-4 grid">
       <div className="header h-30 flex flex-col gap-4 justify-center mx-4 mb-2">
         <div className="title text-3xl">Subscription</div>
         <div className="subtitle text-xl">Grow your business with the right plan</div>

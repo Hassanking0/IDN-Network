@@ -2,7 +2,7 @@ import { MessageCircleWarning, ReceiptText, LockKeyhole, ChevronRight } from "lu
 
 const support = () => {
   return (
-    <div className="w-285">
+    <div className="w-full px-2">
       <div className="w-full header h-15 flex items-center justify-between text-white text-2xl px-2">
         <div className="title">Support</div>
         <button className="bg-green-500 mt-40 p-2 px-5 rounded-xl text-sm flex items-center justify-center text-black cursor-pointer gap-2">

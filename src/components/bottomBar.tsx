@@ -4,16 +4,18 @@ import {
   MapPinHouse,
   Calendar,
   FileText,
-  Settings,
+  Kanban
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import Overview from "@/app/overview/overview";
 import Map from "@/app/map/map";
+import {  NavLink } from "react-router-dom";
 
 // Type definitions
 interface NavItem {
   id: string;
+  url: string,
   icon: LucideIcon;
   label: string;
   color: string;
@@ -39,6 +41,7 @@ const BottomNavBar: React.FC = () => {
   const navItems: NavItem[] = [
     {
       id: "dashboard",
+      url: "/overview",
       icon: LayoutDashboard,
       label: "Dashboard View",
       color: "bg-blue-500",
@@ -46,29 +49,33 @@ const BottomNavBar: React.FC = () => {
     },
     {
       id: "map",
+      url: "/map",
       icon: MapPinHouse,
       label: "Map",
       color: "bg-green-500",
       component: MapPage,
     },
     {
-      id: "calendar",
+      id: "requests",
+      url: "/requests",
       icon: Calendar,
-      label: "Calendar",
+      label: "Requests",
       color: "bg-purple-500",
       component: CalendarPage,
     },
     {
-      id: "reports",
+      id: "quotes",
       icon: FileText,
-      label: "Reports",
+      url: "/quotes",
+      label: "Quotes",
       color: "bg-orange-500",
       component: ReportsPage,
     },
     {
-      id: "settings",
-      icon: Settings,
-      label: "Settings",
+      id: "projects",
+      icon: Kanban,
+      url: "/projects",
+      label: "Projects",
       color: "bg-red-500",
       component: SettingsPage,
     },
@@ -84,14 +91,14 @@ const BottomNavBar: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="bg-zinc-400 w-screen">
       {/* Page Content Area */}
-      <div className="flex-1">
+      <div className="flex-1 overflow-y-auto">
         {ActivePageComponent && <ActivePageComponent />}
       </div>
 
-      <div className="bottom-bar text-white w-screen">
-        <div className="upper text-sm border-b border-zinc-300 flex items-center justify-between px-4">
+      <div className="bottom-bar bg-zinc-950 text-white min-w-screen">
+        <div className="upper w-screen text-sm border-b border-zinc-950 flex items-center justify-between px-4">
           <div className="left flex gap-2 py-2">
             <div className="title-sent">
               <div className="title">Quotes</div>
@@ -114,7 +121,8 @@ const BottomNavBar: React.FC = () => {
                   const isActive: boolean = activeTab === item.id;
 
                   return (
-                    <button
+                    <NavLink
+                    to={item.url}
                       key={item.id}
                       onClick={() => handleTabClick(item.id)}
                       className={`
@@ -146,7 +154,7 @@ const BottomNavBar: React.FC = () => {
                       >
                         {item.label}
                       </span>
-                    </button>
+                    </NavLink>
                   );
                 })}
               </div>

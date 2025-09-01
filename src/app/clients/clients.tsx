@@ -5,7 +5,7 @@ const clients = () => {
   let [text, setText] = useState("")
 
   return (
-    <div className="w-280 bg-black text-white min-h-full px-2 pb-22 select-none">
+    <div className="w-full bg-black text-white overflow-y-hidden md:overflow-auto md:min-h-full px-2 md:pb-22 select-none">
       <div className="header h-20 flex items-center px-2">
         <div className="title text-3xl">
           Clients
@@ -18,7 +18,7 @@ const clients = () => {
         </div>
         <div className="icon"><Users size={26} /></div>
       </div>
-      <div className="btns flex gap-18 py-8 text-zinc-600 px-8">
+      <div className="btns overflow-x-auto flex gap-18 py-8 text-zinc-600 px-8">
         <button onClick={()=>{setText("No Clients")}} className="cursor-pointer px-4 py-2 rounded-xl focus:bg-zinc-800 focus:text-white">All</button>
         <button onClick={()=>{setText("No Clients")}} className="cursor-pointer px-4 py-2 rounded-xl  focus:bg-zinc-800 focus:text-white">Adding by You</button>
         <button onClick={()=>{setText("No Clients")}} className="cursor-pointer px-4 py-2 rounded-xl  focus:bg-zinc-800 focus:text-white">Pending Clients</button>

@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 
 
+body{
+  background-color: black;
+}
+
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   width: 8px;              /* width of scrollbar */

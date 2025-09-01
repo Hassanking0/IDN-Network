@@ -31,7 +31,7 @@ import { NavProjects3 } from "./nav-projects3";
 import { Sidebar, SidebarContent, SidebarRail } from "@/components/ui/sidebar";
 
 // This is sample data.
-const data = {
+export const data = {
   navMain: [
     {
       title: "Operation",
@@ -173,19 +173,16 @@ const data = {
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
+    
     <Sidebar collapsible="icon" {...props} >
-      {/* <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-      </SidebarHeader> */}
+      
       <SidebarContent>
         <NavProjects projects={data.projects} />
         <NavProjects2  projects={data.projects2}/>
         <NavMain items={data.navMain} />
         <NavProjects3 projects={data.projects3}/>
       </SidebarContent>
-      {/* <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter> */}
+   
       <SidebarRail />
     </Sidebar>
   );

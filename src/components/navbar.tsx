@@ -13,6 +13,13 @@ import {
 
 import { useState } from "react";
 import Logo from "../assets/idn.png";
+import { SidebarContent, SidebarProvider } from "./ui/sidebar";
+import AppSidebar, { data } from "./app-sidebar";
+import { NavMain } from "./nav-main";
+import { NavProjects } from "./nav-projects";
+import NavProjects2 from "./nav-projects2";
+import NavProjects3 from "./nav-projects3";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -77,7 +84,7 @@ const Navbar = () => {
       </nav>
 
       {/* ------------------- MOBILE NAV ------------------- */}
-      <nav className="lg:hidden bg-black w-full h-16 flex items-center justify-between px-4 text-sm text-zinc-100">
+      <nav className="lg:hidden relative z-100 bg-black w-full border-b border-zinc-800 h-16 flex items-center justify-between px-4 text-sm text-zinc-100">
         {/* Left: Hamburger */}
         <button
           className="p-2 hover:bg-zinc-800 rounded-lg"
@@ -108,24 +115,112 @@ const Navbar = () => {
 
       {/* ------------------- MOBILE SIDEBAR ------------------- */}
       {menuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 h-full w-64 bg-zinc-900 border-r border-zinc-800 p-6 z-50">
-          <button
-            className="mb-6 p-2 hover:bg-zinc-800 rounded"
-            onClick={() => setMenuOpen(false)}
+      <div
+          className="fixed left-0 top-0 w-[80%] h-ful shadow-xl p-4 overflow-y-auto inset-0 z-[900] bg-zinc-950 pt-10"
+          onClick={() => setMenuOpen(false)}
+        >
+           <button
+          className="text-white rounded-lg"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+          <div className="flex w-full justify-center text-center">
+            <div className="text-white flex flex-col justify-center items-center text-center">
+              <img className="w-30 h-30 rounded-full" src={Logo} alt="Logo" />
+              <div className="joining-date text-zinc-500">Since 22 Aug 2025</div>
+              <div className="name">Hassan King</div>
+              <div className="work text-orange-400">Private Driver</div>
+              <div className="city text-zinc-500">Multan, Pakistan</div>
+            </div>
+          </div>
+         
+          <div
+            className="w-full p-4 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            <X size={24} />
-          </button>
-          <nav className="flex flex-col gap-4">
-            <a className="flex items-center gap-2">
-              <CircleCheckBig size={16} color="green" /> 0 won
-            </a>
-            <a className="flex items-center gap-2">
-              <Send size={16} color="orange" /> 0 sent
-            </a>
-            <a className="flex items-center gap-2">
-              <ClipboardClock size={16} color="red" /> 0 pending
-            </a>
-          </nav>
+            
+            
+
+            <hr className="my-4" />
+
+            {/* projects */}
+            <div>
+              <ul className="gap-8 grid grid-cols-2 text-white">
+                {data.projects.map((proj, i) => (
+                  <li key={i}>
+                    <NavLink
+                      to={proj.url}
+                      className={({ isActive }) =>
+                        `flex flex-col contains justify-center items-center gap-2 p-1 rounded-xl w-30 h-30 bg-gray-700 ${
+                          isActive
+                            ? "text-blue-600 font-medium bg-blue-50"
+                            : " hover:text-black"
+                        }`
+                      }
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      
+                      <proj.icon className="w-4 h-4" />
+                      {proj.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <hr className="my-4" />
+
+            {/* projects2 */}
+            <div>
+              <ul className="gap-8 grid grid-cols-2 text-white">
+                {data.projects2.map((proj, i) => (
+                  <li key={i}>
+                    <NavLink
+                      to={proj.url}
+                      className={({ isActive }) =>
+                        `flex flex-col justify-center items-center gap-2 p-1 rounded-xl w-30 h-30 bg-gray-700  ${
+                          isActive
+                            ? "text-blue-600 font-medium bg-blue-50"
+                            : " hover:text-black"
+                        }`
+                      }
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <proj.icon className="w-4 h-4" />
+                      {proj.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <hr className="my-4" />
+
+            {/* projects3 */}
+            <div>
+              <ul className="gap-8 grid grid-cols-2 text-white">
+                {data.projects3.map((proj, i) => (
+                  <li key={i}>
+                    <NavLink
+                      to={proj.url}
+                      className={({ isActive }) =>
+                        `flex flex-col justify-center items-center gap-2 p-1 rounded-xl w-30 h-30 bg-gray-700 ${
+                          isActive
+                            ? "text-blue-600 font-medium bg-blue-50"
+                            : "hover:text-black"
+                        }`
+                      }
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <proj.icon className="w-4 h-4" />
+                      {proj.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       )}
     </div>
