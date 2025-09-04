@@ -24,7 +24,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-
+import { NavLink} from 'react-router-dom'
 export function NavDocuments({
   items,
 }: {
@@ -43,10 +43,10 @@ export function NavDocuments({
         {items.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+                <NavLink to={item.url} className="flex items-center gap-2">
                 <item.icon />
                 <span>{item.name}</span>
-              </a>
+                </NavLink>
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

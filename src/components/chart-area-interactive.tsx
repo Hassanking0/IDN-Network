@@ -27,6 +27,11 @@ import {
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { useIsMobile } from '@/hooks/use-mobile'
 
+interface ChartProps {
+	title: string,
+	desc?: string
+}
+
 export const description = 'An interactive area chart'
 
 const chartData = [
@@ -137,7 +142,7 @@ const chartConfig = {
 	},
 } satisfies ChartConfig
 
-export function ChartAreaInteractive() {
+export function ChartAreaInteractive({ title, desc }: ChartProps) {
 	const isMobile = useIsMobile()
 	const [timeRange, setTimeRange] = React.useState('90d')
 
@@ -163,11 +168,11 @@ export function ChartAreaInteractive() {
 
 	return (
 		<Card className='@container/card'>
-			<CardHeader>
-				<CardTitle>Total Visitors</CardTitle>
+			<CardHeader> 	
+				<CardTitle>{title}</CardTitle>
 				<CardDescription>
 					<span className='hidden @[540px]/card:block'>
-						Total for the last 3 months
+						{desc}
 					</span>
 					<span className='@[540px]/card:hidden'>Last 3 months</span>
 				</CardDescription>

@@ -1,4 +1,5 @@
 import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
+import Create from "@/app/create/Create"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -8,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
+import { NavLink } from "react-router-dom"
 export function NavMain({
   items,
 }: {
@@ -24,11 +25,11 @@ export function NavMain({
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
-              tooltip="Quick Create"
+              tooltip="Create"
               className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <IconCirclePlusFilled />
-              <span>Quick Create</span>
+             <Create />
             </SidebarMenuButton>
             <Button
               size="icon"
@@ -41,15 +42,24 @@ export function NavMain({
           </SidebarMenuItem>
         </SidebarMenu>
         <SidebarMenu>
-          {items.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
-                {item.icon && <item.icon />}
+      {items.map((item) => (
+        <SidebarMenuItem key={item.title}>
+          <NavLink
+            to={item.url}
+            className={({ isActive }) =>
+              isActive ? "w-full" : "w-full"
+            }
+          >
+            <SidebarMenuButton tooltip={item.title} asChild>
+              <div className="flex items-center gap-2">
+                {item.icon && <item.icon className="w-4 h-4" />}
                 <span>{item.title}</span>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
+              </div>
+            </SidebarMenuButton>
+          </NavLink>
+        </SidebarMenuItem>
+      ))}
+    </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>
   )
